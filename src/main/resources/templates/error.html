@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Erro no Sistema</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light d-flex align-items-center" style="height: 100vh;">
+<div class="container text-center">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-danger shadow-lg">
+                <div class="card-body p-5">
+                    <h1 class="display-1 text-danger">⚠️</h1>
+                    <h2 class="mb-3" th:text="${errorTitle}">Ops! Algo deu errado</h2>
+                    <div class="alert alert-secondary py-3">
+                        <p class="lead mb-0" th:text="${errorMessage}">Mensagem detalhada do erro.</p>
+                    </div>
+                    <p class="text-muted small">Status Code: <span th:text="${status}">500</span></p>
+                    <hr>
+                    <a th:href="@{/products}" class="btn btn-primary btn-lg px-5 mt-3">Voltar ao Início</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
